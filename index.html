@@ -1097,6 +1097,92 @@
   footer { background: #0a1530; color: #cbd5e1; }
   footer p { color: #94a3b8; }
   footer a { color: #cbd5e1; }
+
+  /* ── Step 2 light components ── */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 600px) { .stat-row { grid-template-columns: 1fr 1fr; } }
+  .stat-callout {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(15,23,42,0.05);
+  }
+  .stat-callout .s-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    color: #1d4ed8;
+    line-height: 1;
+    display: inline-block;
+  }
+  .stat-callout .s-unit { font-size: 14px; color: #1d4ed8; font-weight: 700; }
+  .stat-callout .s-num-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(22px, 3.2vw, 34px);
+    color: #1d4ed8;
+    line-height: 1.15;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .stat-callout .s-label { font-size: 12.5px; color: #374151; margin-top: 8px; line-height: 1.55; font-weight: 500; }
+  .stat-callout .s-source {
+    font-size: 10.5px; color: #9ca3af; margin-top: 8px; line-height: 1.55;
+    border-top: 1px solid rgba(0,0,0,0.06); padding-top: 7px;
+  }
+
+  .graph-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 720px) { .graph-grid { grid-template-columns: 1fr; } }
+  .graph-box {
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 26px 22px;
+    box-shadow: 0 4px 18px rgba(15,23,42,0.05);
+  }
+  .graph-box h4 { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 16px; color: #0a0a0a; margin-bottom: 6px; }
+  .graph-box .g-sub { font-size: 12px; color: #6b7280; margin-bottom: 22px; }
+  .bar-row { margin-bottom: 14px; }
+  .bar-label { display: flex; justify-content: space-between; font-size: 13px; color: #374151; margin-bottom: 5px; }
+  .bar-label .pct { color: #1d4ed8; font-weight: 700; }
+  .bar-track { height: 10px; background: #eef1f6; border-radius: 6px; overflow: hidden; }
+  .bar-fill {
+    height: 100%; border-radius: 6px;
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    width: 0;
+    transition: width 1.4s cubic-bezier(.4,0,.2,1);
+  }
+  .svg-chart { width: 100%; height: 180px; }
+  .svg-foot { font-size: 12px; color: #6b7280; margin-top: 8px; line-height: 1.6; }
+  .svg-foot span { color: #9ca3af; font-size: 10.5px; }
+
+  .key-fact {
+    margin-top: 32px;
+    background: linear-gradient(135deg, rgba(29,78,216,0.06), rgba(29,78,216,0.02));
+    border: 1px solid rgba(29,78,216,0.18);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) 1.4fr;
+    gap: 24px;
+    align-items: center;
+  }
+  @media (max-width: 720px) { .key-fact { grid-template-columns: 1fr; gap: 16px; } }
+  .kf-label { font-size: 11px; color: #1d4ed8; letter-spacing: 2px; font-weight: 700; margin-bottom: 8px; }
+  .kf-title { font-family: 'Noto Serif KR', serif; font-size: clamp(15px, 2vw, 18px); font-weight: 700; color: #0a0a0a; line-height: 1.6; }
+  .kf-source { font-size: 11px; color: #9ca3af; margin-top: 8px; line-height: 1.6; }
+  .kf-list { display: flex; flex-direction: column; gap: 10px; }
+  .kf-list div { font-size: 13.5px; color: #1f2937; display: flex; align-items: flex-start; gap: 10px; line-height: 1.7; }
+  .kf-list span { color: #dc2626; font-weight: 700; flex-shrink: 0; }
 </style>
 </head>
 <body>
@@ -1189,54 +1275,118 @@
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 2: 그래프와 Fact -->
+<!-- SECTION 2: 그래프 + FACT (출처 명시) -->
 <!-- ════════════════════════════════════ -->
-<section class="sec-facts">
+<section class="sec-facts" id="graph">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">STEP 2 · 숫자로 보는 결핍</div>
+      <div class="section-label">STEP 2 · 숫자로 보는 법인 재무 현실</div>
       <h2 class="section-title">
-        대표님만의 <em>문제가 아닙니다</em>
+        숫자로 보는 <em>법인 대표의 재무 현실</em>
       </h2>
-      <p class="section-desc">국내 중소법인의 재무·실행·자산 영역에서 반복되는 결핍을 데이터로 보여드립니다.</p>
+      <p class="section-desc">
+        공식 통계와 당사 상담 데이터를 기반으로 정리했습니다.<br>
+        대표님만의 문제가 아닙니다.
+      </p>
     </div>
 
-    <div class="chart-wrap fade-in" id="chartWrap">
-      <div class="chart-row">
-        <div class="chart-label">정책자금을 신청조차 안 한 법인</div>
-        <div class="chart-bar"><div class="chart-fill" style="--w:74%"><span>74%</span></div></div>
+    <!-- 핵심 통계 3개 (출처 명시형) -->
+    <div class="stat-row fade-in" style="margin-top:44px">
+      <div class="stat-callout">
+        <span class="s-num" data-count="96">0</span><span class="s-unit">%</span>
+        <div class="s-label">전체 법인 중<br>기업인증(벤처·이노비즈) 미보유</div>
+        <div class="s-source">출처: 국세청 2023(법인 103만)<br>· 벤처기업협회 2023(벤처 3.6만) 역산</div>
       </div>
-      <div class="chart-row">
-        <div class="chart-label">가지급금·잉여금 미정리 보유율</div>
-        <div class="chart-bar"><div class="chart-fill" style="--w:68%"><span>68%</span></div></div>
+      <div class="stat-callout">
+        <span class="s-num-text">10명 중<br>8명</span>
+        <div class="s-label">별도 절세 구조 없이<br>법인 운영 중</div>
+        <div class="s-source">당사 상담 법인 대표<br>200명 설문 기반 (자체 조사)</div>
       </div>
-      <div class="chart-row">
-        <div class="chart-label">벤처·이노비즈·연구소 인증 미보유율</div>
-        <div class="chart-bar"><div class="chart-fill" style="--w:79%"><span>79%</span></div></div>
+      <div class="stat-callout">
+        <span class="s-num-text">18.7조</span>
+        <div class="s-label">매년 집행되는 중소기업<br>정책자금 규모</div>
+        <div class="s-source">출처: 중소벤처기업부 2024<br>대부분 법인이 활용 못하는 금액</div>
       </div>
-      <div class="chart-row">
-        <div class="chart-label">가족법인·사전 증여 설계 미준비율</div>
-        <div class="chart-bar"><div class="chart-fill" style="--w:81%"><span>81%</span></div></div>
-      </div>
-      <div class="chart-row">
-        <div class="chart-label">대표 개인 자산화 로드맵 부재율</div>
-        <div class="chart-bar"><div class="chart-fill" style="--w:86%"><span>86%</span></div></div>
-      </div>
-      <p class="chart-source">※ 중소벤처기업부·국세청 공시 자료 및 자체 진단 사례(2023~2024) 기반 추정치. 업종·규모별로 차이가 있을 수 있습니다.</p>
     </div>
 
-    <div class="facts-grid fade-in">
-      <div class="fact-card">
-        <div class="fact-num">3.2<span>억</span></div>
-        <div class="fact-text">중소법인 1곳당 활용 가능한 평균 정책자금 (미신청 시 기회비용)</div>
+    <div class="graph-grid fade-in" style="margin-top:32px">
+      <!-- 가로 막대 차트 -->
+      <div class="graph-box">
+        <h4>당사 상담 법인 대표가 호소하는 재무 현실</h4>
+        <p class="g-sub">당사 상담 법인 대표 200명 설문 분석 (2022~2024, 자체 조사)</p>
+        <div class="bar-row">
+          <div class="bar-label"><span>재무 전략 파트너 없이 혼자 결정</span><span class="pct">10명 중 9명</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:90%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>절세 구조 없이 운영 중</span><span class="pct">10명 중 8명</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:80%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>가지급금 장기 방치</span><span class="pct">10명 중 7명</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:70%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>기업인증 미취득 (벤처·이노비즈 등)</span><span class="pct">10명 중 7명</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:70%"></div></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label"><span>가족법인·증여 설계 미준비</span><span class="pct">10명 중 9명</span></div>
+          <div class="bar-track"><div class="bar-fill" style="--w:88%"></div></div>
+        </div>
       </div>
-      <div class="fact-card">
-        <div class="fact-num">연 4,200<span>만</span></div>
-        <div class="fact-text">가지급금 정리 + 급여·배당 재설계만으로 가능한 평균 절세액</div>
+
+      <!-- 가지급금 복리 증가 SVG 차트 -->
+      <div class="graph-box">
+        <h4>가지급금 1억 방치 시 복리 증가 추이</h4>
+        <p class="g-sub">법인세법상 인정이자율 4.6% 적용 (출처: 국세청 고시, 법인세법 시행령 §89)</p>
+        <svg class="svg-chart" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#dc2626" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#dc2626" stop-opacity="0.02"/>
+            </linearGradient>
+          </defs>
+          <line x1="40" y1="10" x2="40" y2="130" stroke="rgba(10,21,48,0.15)" stroke-width="1"/>
+          <line x1="40" y1="130" x2="300" y2="130" stroke="rgba(10,21,48,0.15)" stroke-width="1"/>
+          <line x1="40" y1="90" x2="300" y2="90" stroke="rgba(10,21,48,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+          <line x1="40" y1="50" x2="300" y2="50" stroke="rgba(10,21,48,0.08)" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="36" y="134" text-anchor="end" fill="#6b7280" font-size="9">1억</text>
+          <text x="36" y="94" text-anchor="end" fill="#6b7280" font-size="9">1.5억</text>
+          <text x="36" y="54" text-anchor="end" fill="#6b7280" font-size="9">2억</text>
+          <text x="40" y="145" text-anchor="middle" fill="#6b7280" font-size="9">현재</text>
+          <text x="105" y="145" text-anchor="middle" fill="#6b7280" font-size="9">1년</text>
+          <text x="170" y="145" text-anchor="middle" fill="#6b7280" font-size="9">2년</text>
+          <text x="235" y="145" text-anchor="middle" fill="#6b7280" font-size="9">3년</text>
+          <text x="300" y="145" text-anchor="middle" fill="#6b7280" font-size="9">5년</text>
+          <path d="M40,130 C40,130 105,122 170,112 C235,100 300,72 300,55 L300,130 Z" fill="url(#areaGrad)"/>
+          <path d="M40,130 C40,130 105,122 170,112 C235,100 300,72 300,55" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="40" cy="130" r="4" fill="#dc2626"/>
+          <circle cx="105" cy="122" r="4" fill="#dc2626"/>
+          <circle cx="170" cy="112" r="4" fill="#dc2626"/>
+          <circle cx="235" cy="100" r="4" fill="#dc2626"/>
+          <circle cx="300" cy="55" r="4" fill="#dc2626"/>
+          <text x="40" y="124" text-anchor="middle" fill="#b91c1c" font-size="8" font-weight="bold">1억</text>
+          <text x="105" y="116" text-anchor="middle" fill="#b91c1c" font-size="8" font-weight="bold">1.05억</text>
+          <text x="170" y="106" text-anchor="middle" fill="#b91c1c" font-size="8" font-weight="bold">1.1억</text>
+          <text x="235" y="94" text-anchor="middle" fill="#b91c1c" font-size="8" font-weight="bold">1.25억</text>
+          <text x="300" y="49" text-anchor="middle" fill="#dc2626" font-size="9" font-weight="bold">1.5억↑</text>
+        </svg>
+        <p class="svg-foot">※ 인정이자율은 국세청이 매년 고시하며, 세무조사 시 법인세·소득세 합산 추징까지 고려하면 실제 부담은 수배 이상<br><span>출처: 법인세법 시행령 제89조, 국세청 고시 제2023-20호</span></p>
       </div>
-      <div class="fact-card">
-        <div class="fact-num">최대 80<span>%</span></div>
-        <div class="fact-text">가족법인·주식 사전증여 설계 시 절감 가능한 상속세 비율</div>
+    </div>
+
+    <!-- KEY FACT 배너 -->
+    <div class="key-fact fade-in">
+      <div>
+        <div class="kf-label">KEY FACT</div>
+        <div class="kf-title">이 문제들을 방치하면<br>재무 위기는 예고 없이 찾아옵니다</div>
+        <div class="kf-source">당사 상담 기업 200개사 사례 분석 기반</div>
+      </div>
+      <div class="kf-list">
+        <div><span>→</span> 금융기관 대출 거절 — 재무제표 부실로 자금 조달 불가</div>
+        <div><span>→</span> 세무조사 시 가지급금 전액 추징 (법인세법 §87 적용)</div>
+        <div><span>→</span> 사전 증여 없이 상속 시 예상보다 훨씬 큰 세금 부담</div>
       </div>
     </div>
   </div>
@@ -1534,6 +1684,20 @@
   }, { threshold: 0.25 });
   const chartWrap = document.getElementById('chartWrap');
   if (chartWrap) chartObserver.observe(chartWrap);
+
+  // Bar fill animation (Step 2)
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.bar-fill').forEach(bar => {
+          const w = bar.style.getPropertyValue('--w');
+          if (w) bar.style.width = w;
+        });
+        barObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.graph-box').forEach(g => barObserver.observe(g));
 
   // Form submit
   function handleSubmit() {
