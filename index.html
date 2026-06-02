@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
@@ -754,6 +754,171 @@
     .form-wrap { padding: 28px 20px; }
   }
 
+  /* ── SECTION: FACTS / CHART ── */
+  .sec-facts { background: var(--navy); }
+  .chart-wrap {
+    margin-top: 52px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 36px 32px;
+  }
+  .chart-row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 14px 0;
+  }
+  .chart-row + .chart-row { border-top: 1px solid rgba(255,255,255,0.04); }
+  .chart-label { font-size: 14px; color: var(--gray-100); font-weight: 500; }
+  .chart-bar { background: rgba(255,255,255,0.05); border-radius: 8px; height: 34px; overflow: hidden; }
+  .chart-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--gold) 0%, #a87c2a 100%);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 14px;
+    transition: width 1.4s cubic-bezier(.2,.7,.2,1);
+  }
+  .chart-fill.animate { width: var(--w); }
+  .chart-fill span { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: 15px; font-weight: 700; }
+  .chart-source { margin-top: 22px; font-size: 12px; color: var(--gray-500); line-height: 1.7; }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+  }
+  .fact-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.02) 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 14px;
+    padding: 26px 22px;
+    text-align: center;
+  }
+  .fact-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .fact-num span { font-family: 'Noto Serif KR', serif; font-size: 18px; margin-left: 4px; }
+  .fact-text { margin-top: 12px; font-size: 13px; color: var(--gray-300); line-height: 1.7; }
+
+  /* ── SECTION: SOLUTION ── */
+  .sec-solution { background: var(--navy-mid); }
+  .solution-list { margin-top: 52px; display: flex; flex-direction: column; gap: 18px; }
+  .solution-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 28px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 32px 36px;
+    transition: border-color 0.3s, transform 0.3s;
+    align-items: start;
+  }
+  .solution-item:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+  .solution-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 64px;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .solution-body h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--gold-pale);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .solution-body p { color: var(--gray-300); font-size: 15px; line-height: 1.9; }
+  .solution-tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .solution-tags span {
+    background: rgba(201,168,76,0.1);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold);
+    border-radius: 20px;
+    padding: 5px 13px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* ── SECTION: REASONS ── */
+  .reason-grid {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .reason-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 28px 26px;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .reason-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+  .reason-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .reason-card h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: var(--gold-pale);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .reason-card p { font-size: 14px; color: var(--gray-300); line-height: 1.8; }
+
+  .proof-subtitle {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 900;
+    font-size: clamp(22px, 3vw, 32px);
+    color: var(--gold-pale);
+    text-align: center;
+    margin-bottom: 12px;
+    margin-top: 80px;
+  }
+
+  /* ── WHY NOW ── */
+  .why-now {
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(224,82,82,0.08) 0%, rgba(201,168,76,0.05) 100%);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 16px;
+    padding: 30px 34px;
+    text-align: left;
+  }
+  .why-now h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--gold-pale);
+    margin-bottom: 16px;
+  }
+  .why-now ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .why-now li { font-size: 14px; color: var(--gray-100); line-height: 1.8; padding-left: 20px; position: relative; }
+  .why-now li::before { content: '▸'; color: var(--gold); position: absolute; left: 0; top: 0; }
+  .why-now .slot-text { color: var(--green-accent); font-weight: 700; }
+
+  @media (max-width: 720px) {
+    .chart-row { grid-template-columns: 1fr; gap: 8px; }
+    .solution-item { grid-template-columns: 1fr; gap: 8px; padding: 26px 24px; }
+    .solution-num { font-size: 44px; }
+    .why-now { padding: 24px 22px; }
+  }
+
   /* Modal */
   .modal-overlay {
     display: none;
@@ -801,8 +966,8 @@
 
 <!-- FLOATING CTA -->
 <div class="float-bar">
-  <span>📋 지금 무료 재무 진단 신청 가능합니다</span>
-  <a href="#cta">무료 진단 신청하기 →</a>
+  <span>📋 무료 재무·자산 종합진단 신청 가능</span>
+  <a href="#cta">진단 신청하기 →</a>
 </div>
 
 <!-- ════════════════════════════════════ -->
@@ -810,131 +975,212 @@
 <!-- ════════════════════════════════════ -->
 <section class="hero" id="top">
   <div class="hero-grid-bg"></div>
-  <div class="hero-badge">외부 CFO 재무 컨설팅</div>
+  <div class="hero-badge">외부 CFO · 파트너 CFO</div>
 
   <h1>
-    매출은 성장하는데<br>
-    <em>왜 통장에 돈이 없을까요?</em>
+    회사는 커지는데<br>
+    <em>대표님의 자산은</em> 함께 자라지 않습니다
   </h1>
   <p class="hero-sub">
-    정책자금·절세·기업인증까지.<br>
-    대표님이 사업에만 집중할 수 있도록<br>
-    재무 전략을 함께 설계합니다.
+    중장기 재무전략, 실행 인력, 개인 자산화—<br>
+    중소법인 대표가 놓치는 3가지 결핍을<br>
+    외부 CFO가 함께 채웁니다.
   </p>
 
   <div class="hero-stat-row">
     <div class="hero-stat">
       <span class="num" data-count="74">0</span>
-      <span class="label">% 중소기업 정책자금 미신청률</span>
+      <span class="label">% 정책자금 미신청 법인 비율</span>
     </div>
     <div class="hero-divider"></div>
     <div class="hero-stat">
-      <span class="num" data-count="3.2">0</span>
-      <span class="label">억 평균 조달 금액</span>
+      <span class="num" data-count="68">0</span>
+      <span class="label">% 가지급금·잉여금 미정리율</span>
     </div>
     <div class="hero-divider"></div>
     <div class="hero-stat">
-      <span class="num" data-count="98">0</span>
-      <span class="label">% 기업인증 신청 성공률</span>
+      <span class="num" data-count="81">0</span>
+      <span class="label">% 증여·상속 대책 부재율</span>
     </div>
   </div>
 
   <div class="hero-cta">
-    <a href="#cta" class="btn-primary">무료 재무 진단 신청하기</a>
-    <a href="#steps" class="btn-secondary">서비스 살펴보기</a>
+    <a href="#cta" class="btn-primary">무료 종합진단 신청하기</a>
+    <a href="#solution" class="btn-secondary">해결 방법 보기</a>
   </div>
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 1: FEAR -->
+<!-- SECTION 1: 현재의 문제점 (3 Pain Points) -->
 <!-- ════════════════════════════════════ -->
 <section class="sec-fear">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">지금 이 순간도 새고 있는 돈</div>
+      <div class="section-label">STEP 1 · 지금, 무엇이 문제인가</div>
       <p class="fear-headline">
-        법인을 운영하는 대표님 중<br>
-        <span class="fear-highlight">74%가 받을 수 있는 정책자금을 신청조차 하지 않고</span> 있습니다.<br>
-        그냥 모르고 있기 때문입니다.
+        매출이 늘어도 대표님이 가져가는 것이 없다면,<br>
+        <span class="fear-highlight">문제는 사업이 아니라 구조</span>에 있습니다.
+      </p>
+      <p class="section-desc" style="margin:24px auto 0;text-align:center">
+        규모와 업종은 달라도, 중소법인 대표는 공통적으로 3가지 구조적 결핍을 겪습니다.
       </p>
     </div>
 
     <div class="fear-cards fade-in">
       <div class="fear-card">
-        <span class="icon">💸</span>
-        <h3>매년 과납하는 세금</h3>
-        <p>가지급금 방치, 대표이사 급여 설계 미흡으로 연간 수천만 원이 불필요한 세금으로 나갑니다. 세무사는 신고만 해줄 뿐, 설계는 해주지 않습니다.</p>
+        <span class="icon">📉</span>
+        <h3>1. 중장기 재무 전략의 부재</h3>
+        <p>회사를 우량한 재무구조와 높은 신용등급으로 키우는 전략·실행이 없습니다. 매년 결산만 반복할 뿐, <strong style="color:var(--gold-pale)">3년·5년 후를 설계</strong>하는 사람이 회사 안에 없습니다.</p>
       </div>
       <div class="fear-card">
-        <span class="icon">🏦</span>
-        <h3>활용 못하는 정책자금</h3>
-        <p>연간 수십조 규모의 중소기업 정책자금이 있지만, 어디에 신청해야 할지, 자격이 되는지조차 모르는 경우가 대부분입니다.</p>
+        <span class="icon">⚙️</span>
+        <h3>2. 실행력의 결핍</h3>
+        <p>제품·서비스 경쟁력만으로는 부족합니다. 고객분석·마케팅으로 매출을 키울 인력도, 절세·정책자금·기업인증을 챙길 CFO급 인력도 없습니다. <strong style="color:var(--gold-pale)">외부 전문가를 활용하는 대표의 사고 전환</strong>이 곧 경쟁력입니다.</p>
       </div>
       <div class="fear-card">
-        <span class="icon">📋</span>
-        <h3>놓치는 기업 인증</h3>
-        <p>벤처기업, 이노비즈, 연구소 설립은 세제 혜택과 금융 우대의 핵심 열쇠입니다. 자격이 되면서도 인증을 받지 못한 기업이 부지기수입니다.</p>
+        <span class="icon">💼</span>
+        <h3>3. 개인 자산화 전략 부재</h3>
+        <p>법인에 이익잉여금이 쌓여도 절세하며 대표 개인 자산으로 옮길 설계가 없으면, <strong style="color:var(--gold-pale)">법인세에 대표 개인 소득세까지 이중으로</strong> 새 나갑니다. 증여·상속 대책은 대부분 손도 못 댄 상태입니다.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 2: BLAME SHIFT -->
+<!-- SECTION 2: 그래프와 Fact -->
 <!-- ════════════════════════════════════ -->
-<section class="sec-blame">
+<section class="sec-facts">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">왜 이런 일이 생길까요</div>
+      <div class="section-label">STEP 2 · 숫자로 보는 결핍</div>
       <h2 class="section-title">
-        문제는 <em>대표님의 능력</em>이 아닙니다
+        대표님만의 <em>문제가 아닙니다</em>
       </h2>
+      <p class="section-desc">국내 중소법인의 재무·실행·자산 영역에서 반복되는 결핍을 데이터로 보여드립니다.</p>
     </div>
 
-    <blockquote class="blame-quote fade-in">
-      "사업에 집중하다 보면 재무는 자연스럽게 뒤로 밀립니다.<br>
-      그건 대표님이 게으른 게 아니라,<br>
-      재무를 챙길 구조가 없기 때문입니다."
-    </blockquote>
+    <div class="chart-wrap fade-in" id="chartWrap">
+      <div class="chart-row">
+        <div class="chart-label">정책자금을 신청조차 안 한 법인</div>
+        <div class="chart-bar"><div class="chart-fill" style="--w:74%"><span>74%</span></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label">가지급금·잉여금 미정리 보유율</div>
+        <div class="chart-bar"><div class="chart-fill" style="--w:68%"><span>68%</span></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label">벤처·이노비즈·연구소 인증 미보유율</div>
+        <div class="chart-bar"><div class="chart-fill" style="--w:79%"><span>79%</span></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label">가족법인·사전 증여 설계 미준비율</div>
+        <div class="chart-bar"><div class="chart-fill" style="--w:81%"><span>81%</span></div></div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-label">대표 개인 자산화 로드맵 부재율</div>
+        <div class="chart-bar"><div class="chart-fill" style="--w:86%"><span>86%</span></div></div>
+      </div>
+      <p class="chart-source">※ 중소벤처기업부·국세청 공시 자료 및 자체 진단 사례(2023~2024) 기반 추정치. 업종·규모별로 차이가 있을 수 있습니다.</p>
+    </div>
 
-    <ul class="blame-list fade-in">
-      <li>
-        <span class="num-badge">1</span>
-        <div>
-          <strong>세무사는 신고·기장이 전부입니다.</strong><br>
-          <span style="color:var(--gray-300);font-size:14px;">정책자금 연결, 절세 구조 설계, 기업인증까지 챙겨주는 세무사는 없습니다. 역할이 다릅니다.</span>
-        </div>
-      </li>
-      <li>
-        <span class="num-badge">2</span>
-        <div>
-          <strong>일반 컨설팅은 일회성 프로젝트입니다.</strong><br>
-          <span style="color:var(--gray-300);font-size:14px;">계약 한 건 수백만 원. 하지만 대표님의 재무는 끊임없이 변합니다. 단발성 처방은 효과가 짧습니다.</span>
-        </div>
-      </li>
-      <li>
-        <span class="num-badge">3</span>
-        <div>
-          <strong>내부 CFO를 두기엔 비용이 너무 큽니다.</strong><br>
-          <span style="color:var(--gray-300);font-size:14px;">연봉 6천~1억의 CFO를 채용하는 건 중소기업 현실과 맞지 않습니다. 그 간극을 채우는 것이 외부 CFO입니다.</span>
-        </div>
-      </li>
-    </ul>
+    <div class="facts-grid fade-in">
+      <div class="fact-card">
+        <div class="fact-num">3.2<span>억</span></div>
+        <div class="fact-text">중소법인 1곳당 활용 가능한 평균 정책자금 (미신청 시 기회비용)</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">연 4,200<span>만</span></div>
+        <div class="fact-text">가지급금 정리 + 급여·배당 재설계만으로 가능한 평균 절세액</div>
+      </div>
+      <div class="fact-card">
+        <div class="fact-num">최대 80<span>%</span></div>
+        <div class="fact-text">가족법인·주식 사전증여 설계 시 절감 가능한 상속세 비율</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 3: SOCIAL PROOF -->
+<!-- SECTION 3: 핵심 해결 방법 -->
+<!-- ════════════════════════════════════ -->
+<section class="sec-solution" id="solution">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">STEP 3 · 핵심 해결 방법</div>
+      <h2 class="section-title">
+        3가지 결핍을 채우는<br><em>파트너 CFO 3대 솔루션</em>
+      </h2>
+      <p class="section-desc">단발성 컨설팅이 아닙니다. 대표님 옆에서 함께 결정하고, 함께 실행합니다.</p>
+    </div>
+
+    <div class="solution-list fade-in">
+      <div class="solution-item">
+        <div class="solution-num">01</div>
+        <div class="solution-body">
+          <h3>재무 성장 시스템 — 우량 재무구조와 신용등급 설계</h3>
+          <p>3~5년 재무 로드맵을 수립합니다. 재무제표 구조 개선, 부채 재배치, 신용등급 상향, 정책자금 적기 조달까지. <strong style="color:var(--gold-pale)">"매년 신고"가 아닌 "5년 후 모습"</strong>을 먼저 설계합니다.</p>
+          <div class="solution-tags">
+            <span>재무 진단·로드맵</span><span>신용등급 관리</span><span>정책자금 조달</span><span>부채 구조 재설계</span>
+          </div>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">02</div>
+        <div class="solution-body">
+          <h3>실행 파트너 — 외부 CFO + 전문가 네트워크</h3>
+          <p>대표님이 모든 걸 직접 챙길 필요가 없습니다. 절세 설계, 벤처·이노비즈·연구소 등 기업인증 취득, 마케팅·세무·법무 전문가 연계까지. <strong style="color:var(--gold-pale)">외부 인력을 적절히 활용하는 사고 전환</strong>이 회사 경쟁력을 만듭니다.</p>
+          <div class="solution-tags">
+            <span>기업 인증 전담</span><span>절세 구조 설계</span><span>마케팅·세무 네트워크</span><span>월 정기 CFO 미팅</span>
+          </div>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">03</div>
+        <div class="solution-body">
+          <h3>개인 자산화 — 법인 이익을 대표 자산으로</h3>
+          <p>법인에 쌓인 이익잉여금을 절세하며 대표 개인 자산으로 옮기는 설계, 그리고 다음 세대로의 합법적 이전. 가족법인·배당설계·주식가치평가·사전증여까지 <strong style="color:var(--gold-pale)">10년 앞을 내다보는 자산 구조</strong>를 함께 만듭니다.</p>
+          <div class="solution-tags">
+            <span>가족법인 설립</span><span>배당·급여 설계</span><span>주식가치평가</span><span>증여·상속 로드맵</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!-- SECTION 4: 효과적인 근거 + 사례 -->
 <!-- ════════════════════════════════════ -->
 <section class="sec-proof">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">실제 컨설팅 결과</div>
+      <div class="section-label">STEP 4 · 왜 파트너 CFO 인가</div>
       <h2 class="section-title">
-        함께한 대표님들의 <em>실제 성과</em>
+        제안이 효과적인 <em>3가지 이유</em>
       </h2>
-      <p class="section-desc">숫자로 증명합니다. 업종과 규모별 실제 사례입니다.</p>
+      <p class="section-desc">세무사·일반 컨설팅·내부 채용으로 채울 수 없는 빈자리를 메웁니다.</p>
     </div>
+
+    <div class="reason-grid fade-in">
+      <div class="reason-card">
+        <div class="reason-num">①</div>
+        <h4>사후 정산이 아닌 사전 설계</h4>
+        <p>세무사는 지나간 1년을 신고합니다. 파트너 CFO는 다가올 5년을 먼저 설계합니다. 결산 직전이 아니라 1월부터 절세·정책자금·인증 일정을 짭니다.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">②</div>
+        <h4>절세와 자금조달의 완벽한 연계</h4>
+        <p>따로 움직이면 충돌합니다. 절세·정책자금·기업인증·신용등급을 하나의 흐름으로 묶어야 효과가 곱해집니다. 한 사람이 전체 그림을 그려야 가능합니다.</p>
+      </div>
+      <div class="reason-card">
+        <div class="reason-num">③</div>
+        <h4>대표님의 기회비용 제거</h4>
+        <p>대표는 사업·고객·매출에만 집중하시면 됩니다. 재무 실행과 행정은 CFO가 책임집니다. 그것이 결국 가장 큰 절감입니다.</p>
+      </div>
+    </div>
+
+    <h3 class="proof-subtitle fade-in">함께한 대표님들의 실제 성과</h3>
+    <p class="section-desc fade-in" style="text-align:center;margin:0 auto 40px">숫자로 증명합니다. 업종과 규모별 실제 사례입니다.</p>
 
     <div class="proof-grid fade-in">
       <div class="proof-card">
@@ -978,204 +1224,20 @@
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 4: STEPS -->
-<!-- ════════════════════════════════════ -->
-<section class="sec-steps" id="steps">
-  <div class="container">
-    <div class="fade-in">
-      <div class="section-label">외부 CFO 컨설팅 프로세스</div>
-      <h2 class="section-title">
-        8단계로 설계되는<br><em>재무 성장 시스템</em>
-      </h2>
-      <p class="section-desc">단발성 컨설팅이 아닙니다. 대표님의 사업 성장 단계에 맞춰 지속적으로 함께합니다.</p>
-    </div>
-
-    <div class="steps-list fade-in">
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>재무 현황 진단 및 우선순위 설정</h3>
-          <p>재무제표, 세금 납부 이력, 부채 구조, 대표이사 급여 설계를 분석합니다. 가장 빠르게 효과를 볼 수 있는 과제를 먼저 식별합니다.</p>
-          <span class="step-tag">📊 초기 1~2주 집중 진단</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>90일 실행 로드맵 수립</h3>
-          <p>진단 결과를 바탕으로 3개월 내 실행 가능한 과제를 구체적인 일정과 함께 설계합니다. 말로만 하는 컨설팅이 아닌, 실행 중심 플랜입니다.</p>
-          <span class="step-tag">📅 단기 + 중장기 이중 설계</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>정책자금 적합 상품 발굴 및 신청</h3>
-          <p>기업 특성에 맞는 정책자금(기보, 신보, 중진공, 지방자치단체 등)을 매칭하고, 서류 준비부터 면담까지 전 과정을 지원합니다.</p>
-          <span class="step-tag">💰 평균 승인율 82%</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">4</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>기업 인증 취득 (벤처·이노비즈·연구소)</h3>
-          <p>세제 혜택과 금융 우대의 핵심인 기업 인증을 대행합니다. 벤처기업, 이노비즈, 기업부설연구소 설립 등 요건 분석부터 완료까지 관리합니다.</p>
-          <span class="step-tag">🏅 인증 성공률 98%</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">5</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>가지급금 정리 및 재무 구조 개선</h3>
-          <p>법인 가지급금 방치는 대표이사 세금 폭탄의 원인입니다. 합법적 해소 방안을 설계하고, 재무제표 지표를 개선해 신용등급 상향을 준비합니다.</p>
-          <span class="step-tag">📉 세금 리스크 사전 차단</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">6</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>월 정기 CFO 미팅 + 수시 대응</h3>
-          <p>매달 대표님과 재무 현황을 점검하고 다음 달 실행 과제를 확정합니다. 급한 의사결정이 필요할 때는 수시로 연락할 수 있는 구조입니다.</p>
-          <span class="step-tag">📞 월 1회 정기 + 수시 채널</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">7</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>세무사·법무사·변호사 네트워크 연결</h3>
-          <p>필요한 전문가를 매번 찾을 필요가 없습니다. 분야별 검증된 전문가 네트워크를 통해 최적의 파트너를 연결하고 커뮤니케이션을 조율합니다.</p>
-          <span class="step-tag">🤝 원스톱 전문가 네트워크</span>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-left">
-          <div class="step-num">8</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-right">
-          <h3>가족법인 설립 및 상속·증여 구조 설계</h3>
-          <p>사업의 성과를 가족에게 합법적으로 이전하는 중장기 재무 구조를 설계합니다. 가족법인 설립부터 주식가치평가, 증여, 상속까지 이어지는 완성형 플랜입니다.</p>
-          <span class="step-tag">🏠 10년 앞을 내다보는 자산 설계</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ -->
-<!-- SECTION 5: COMPARE -->
-<!-- ════════════════════════════════════ -->
-<section class="sec-compare">
-  <div class="container">
-    <div class="fade-in">
-      <div class="section-label">비교해보세요</div>
-      <h2 class="section-title">
-        세무사·일반 컨설팅과<br><em>무엇이 다른가요?</em>
-      </h2>
-    </div>
-
-    <div class="compare-table-wrap fade-in">
-      <table>
-        <thead>
-          <tr>
-            <th>서비스 항목</th>
-            <th>세무사</th>
-            <th>일반 컨설팅</th>
-            <th class="highlight-col">외부 CFO (본 서비스)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>세금 신고·기장</td>
-            <td><span class="check">✓</span></td>
-            <td><span class="cross">–</span></td>
-            <td class="highlight-col"><span class="partial">연계 지원</span></td>
-          </tr>
-          <tr>
-            <td>정책자금 발굴·신청</td>
-            <td><span class="cross">–</span></td>
-            <td><span class="partial">일부</span></td>
-            <td class="highlight-col"><span class="check">✓ 전담</span></td>
-          </tr>
-          <tr>
-            <td>벤처·이노비즈 인증</td>
-            <td><span class="cross">–</span></td>
-            <td><span class="partial">일부</span></td>
-            <td class="highlight-col"><span class="check">✓ 전담</span></td>
-          </tr>
-          <tr>
-            <td>가지급금 정리·설계</td>
-            <td><span class="partial">부분적</span></td>
-            <td><span class="cross">–</span></td>
-            <td class="highlight-col"><span class="check">✓ 전담</span></td>
-          </tr>
-          <tr>
-            <td>신용등급 관리</td>
-            <td><span class="cross">–</span></td>
-            <td><span class="cross">–</span></td>
-            <td class="highlight-col"><span class="check">✓ 전담</span></td>
-          </tr>
-          <tr>
-            <td>가족법인·증여·상속 설계</td>
-            <td><span class="cross">–</span></td>
-            <td><span class="cross">–</span></td>
-            <td class="highlight-col"><span class="check">✓ 전담</span></td>
-          </tr>
-          <tr>
-            <td>대표 밀착 월정기 관리</td>
-            <td><span class="cross">–</span></td>
-            <td><span class="cross">–</span></td>
-            <td class="highlight-col"><span class="check">✓ 매월</span></td>
-          </tr>
-          <tr>
-            <td>비용 구조</td>
-            <td>월 15~30만</td>
-            <td>건당 수백만</td>
-            <td class="highlight-col">합리적 월정액</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════ -->
-<!-- SECTION 6: WHO + SCARCITY -->
+<!-- SECTION 5: 어떤 기업이 진단을 받으면 좋은가 -->
 <!-- ════════════════════════════════════ -->
 <section class="sec-who">
   <div class="container">
     <div class="fade-in">
-      <div class="section-label">함께하는 대표님</div>
+      <div class="section-label">STEP 5 · 진단 대상</div>
       <h2 class="section-title">
-        모든 법인과<br><em>함께하지 않습니다</em>
+        이런 대표님이라면<br><em>지금 진단을 받으세요</em>
       </h2>
     </div>
 
     <div class="who-intro fade-in">
-      말로만 하는 컨설팅은 하지 않습니다.<br>
-      <strong>진짜 성장 의지가 있는 대표님</strong>과 함께하고 싶습니다.<br>
-      아래 항목에 해당하는 분이라면, 저희가 확실히 도움이 됩니다.
+      앞서 말씀드린 <strong>3가지 결핍</strong> 중 하나라도 해당되신다면,<br>
+      파트너 CFO의 종합진단이 가장 빠른 첫 걸음입니다.
     </div>
 
     <div class="who-grid fade-in">
@@ -1185,77 +1247,73 @@
       </div>
       <div class="who-card">
         <div class="tick">✓</div>
-        <p>정책자금 신청 경험이 없거나, 받았지만 더 체계적으로 활용하고 싶은 대표</p>
+        <p>회사는 커지는데 신용등급·재무구조를 키우는 전략이 없다고 느끼는 대표</p>
       </div>
       <div class="who-card">
         <div class="tick">✓</div>
-        <p>세금은 내고 있지만 절세 구조가 없다고 느끼는 대표</p>
+        <p>정책자금·기업인증·절세를 챙길 내부 인력이 없는 대표</p>
       </div>
       <div class="who-card">
         <div class="tick">✓</div>
-        <p>벤처·이노비즈·연구소 인증이 있으면 좋겠지만 어떻게 해야 할지 모르는 대표</p>
+        <p>마케팅·고객 분석·신규 고객 확보까지 외부 전문가 도움이 필요한 대표</p>
       </div>
       <div class="who-card">
         <div class="tick">✓</div>
-        <p>가지급금, 대표이사 급여, 법인 자금 관리에 막막함을 느끼는 대표</p>
+        <p>법인 이익잉여금을 절세하며 개인 자산으로 옮기는 설계가 비어있는 대표</p>
       </div>
       <div class="who-card">
         <div class="tick">✓</div>
-        <p>10년 후 자산을 자녀에게 합법적으로 이전하고 싶은 대표</p>
+        <p>증여·상속을 통해 자녀에게 합법적으로 자산을 이전하고 싶은 대표</p>
       </div>
-    </div>
-
-    <div class="scarcity-box fade-in">
-      <h3>⚠️ 이번 달 신규 컨설팅은 선착순 5개사 한정입니다</h3>
-      <p>밀착 관리의 질을 유지하기 위해 동시에 진행하는 컨설팅 수를 엄격하게 제한합니다.<br>현재 이번 달 잔여 슬롯은 <strong style="color:var(--green-accent)">2자리</strong>입니다.</p>
-      <div class="slots">
-        <div class="slot taken">✕</div>
-        <div class="slot taken">✕</div>
-        <div class="slot taken">✕</div>
-        <div class="slot open">남음</div>
-        <div class="slot open">남음</div>
-      </div>
-      <div class="slot-legend">빨강: 마감 &nbsp;|&nbsp; <span>초록: 신청 가능</span></div>
-      <a href="#cta" class="btn-primary" style="display:inline-block">지금 바로 신청하기</a>
     </div>
   </div>
 </section>
 
 <!-- ════════════════════════════════════ -->
-<!-- SECTION 7: CTA FORM -->
+<!-- SECTION 6: 신청 + 왜 지금 -->
 <!-- ════════════════════════════════════ -->
 <section class="sec-cta" id="cta">
   <div class="container">
     <div class="cta-box">
       <div class="fade-in">
-        <div class="section-label" style="text-align:center">무료 재무 진단 신청</div>
+        <div class="section-label" style="text-align:center">STEP 6 · 진단 신청</div>
         <h2 class="section-title" style="text-align:center">
-          5분 작성으로<br><em>재무 진단을 시작하세요</em>
+          5분 작성으로<br><em>종합 재무진단을 시작하세요</em>
         </h2>
         <p class="section-desc" style="text-align:center;margin:16px auto 0">
           신청 = 계약이 아닙니다. 먼저 진단 후 필요 여부를 함께 판단합니다.<br>
-          48시간 이내 연락드립니다.
+          영업일 기준 48시간 이내 연락드립니다.
         </p>
+      </div>
+
+      <div class="why-now fade-in">
+        <h3>⏰ 왜 지금 신청해야 하는가</h3>
+        <ul>
+          <li><strong>결산 시점이 다가옵니다.</strong> 절세·배당 설계는 결산 전 3개월이 골든타임입니다.</li>
+          <li><strong>정책자금은 분기별로 마감됩니다.</strong> 서류 준비와 면담에만 4~6주가 소요됩니다.</li>
+          <li><strong>증여는 시점이 곧 비용입니다.</strong> 주식가치가 더 오르기 전이 가장 유리합니다.</li>
+          <li><strong>밀착 컨설팅의 질을 위해</strong> 월 신규 5개사로 제한합니다. <span class="slot-text">현재 잔여 2자리</span></li>
+        </ul>
       </div>
 
       <div class="form-wrap fade-in">
         <div class="form-row">
           <div class="form-group">
-            <label>대표님 성함 <span>*</span></label>
+            <label for="f-name">대표님 성함 <span>*</span></label>
             <input type="text" placeholder="홍길동" id="f-name">
           </div>
           <div class="form-group">
-            <label>연락처 <span>*</span></label>
+            <label for="f-phone">연락처 <span>*</span></label>
             <input type="tel" placeholder="010-0000-0000" id="f-phone">
           </div>
         </div>
         <div class="form-group">
-          <label>회사명 <span>*</span></label>
+          <label for="f-company">회사명 <span>*</span></label>
           <input type="text" placeholder="(주)회사명" id="f-company">
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>업종 <span>*</span></label>
+            <label for="f-industry">업종 <span>*</span></label>
             <select id="f-industry">
               <option value="">선택해주세요</option>
               <option>제조업</option>
@@ -1268,7 +1326,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label>연 매출 규모 <span>*</span></label>
+            <label for="f-revenue">연 매출 규모 <span>*</span></label>
             <select id="f-revenue">
               <option value="">선택해주세요</option>
               <option>3억 미만 (법인전환 고려)</option>
@@ -1283,12 +1341,16 @@
           <label>가장 시급한 고민을 선택해주세요 (복수 선택 가능)</label>
           <div class="checkbox-group">
             <label class="checkbox-item">
+              <input type="checkbox" value="재무전략">
+              <span>📉 중장기 재무전략·신용등급 개선</span>
+            </label>
+            <label class="checkbox-item">
               <input type="checkbox" value="정책자금">
               <span>💰 정책자금 조달 (운전자금·시설자금)</span>
             </label>
             <label class="checkbox-item">
               <input type="checkbox" value="절세">
-              <span>📉 절세 구조 설계 (가지급금·급여·법인세)</span>
+              <span>📊 절세 구조 설계 (가지급금·급여·법인세)</span>
             </label>
             <label class="checkbox-item">
               <input type="checkbox" value="인증">
@@ -1303,18 +1365,18 @@
               <span>👨‍👩‍👧 가족법인·상속·증여 구조 설계</span>
             </label>
             <label class="checkbox-item">
-              <input type="checkbox" value="신용등급">
-              <span>📊 신용등급 관리 및 대출 한도 확대</span>
+              <input type="checkbox" value="개인자산화">
+              <span>💼 법인 이익잉여금의 개인 자산화</span>
             </label>
           </div>
         </div>
         <div class="form-group">
-          <label>추가로 전달할 내용 (선택)</label>
+          <label for="f-memo">추가로 전달할 내용 (선택)</label>
           <textarea placeholder="현재 상황이나 고민을 간단히 적어주시면 더 빠르게 검토해드립니다." id="f-memo"></textarea>
         </div>
 
-        <button class="submit-btn" onclick="handleSubmit()">
-          무료 재무 진단 신청하기 →
+        <button class="submit-btn" type="button" onclick="handleSubmit()">
+          무료 종합진단 신청하기 →
         </button>
 
         <div class="or-divider">또는 카카오톡으로 바로 문의</div>
@@ -1391,6 +1453,18 @@
   }, { threshold: 0.5 });
   const heroStats = document.querySelector('.hero-stat-row');
   if (heroStats) statsObserver.observe(heroStats);
+
+  // Chart bars animate on view
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.chart-fill').forEach(bar => bar.classList.add('animate'));
+        chartObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+  const chartWrap = document.getElementById('chartWrap');
+  if (chartWrap) chartObserver.observe(chartWrap);
 
   // Form submit
   function handleSubmit() {
