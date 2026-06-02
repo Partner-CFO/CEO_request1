@@ -215,6 +215,49 @@
   }
   .hero-video iframe { width: 100%; height: 100%; display: block; border: 0; }
 
+  .hero-lead {
+    max-width: 760px;
+    margin: 56px auto 8px;
+    padding: 32px 32px 28px;
+    background: #ffffff;
+    border: 1px solid rgba(29,78,216,0.15);
+    border-left: 4px solid #1d4ed8;
+    border-radius: 8px;
+    box-shadow: 0 14px 36px rgba(15,23,42,0.07);
+    text-align: center;
+  }
+  .hero-lead-tag {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #1d4ed8;
+    background: rgba(29,78,216,0.08);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
+  .hero-lead-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(20px, 3.2vw, 28px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.45;
+    margin: 0 0 18px;
+    letter-spacing: -0.02em;
+  }
+  .hero-lead-desc {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.9;
+    margin: 0;
+  }
+  .hero-lead-desc strong { color: #1d4ed8; font-weight: 700; }
+  @media (max-width: 640px) {
+    .hero-lead { margin: 40px 16px 8px; padding: 24px 20px; }
+    .hero-lead-desc { font-size: 14px; line-height: 1.85; }
+  }
+
   .hero-cta {
     margin-top: 56px;
     display: flex;
@@ -1246,21 +1289,14 @@
     <iframe src="https://www.youtube.com/embed/MQwBGIo6rlo" title="파트너 CFO 안내 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   </div>
 
-  <div class="hero-stat-row">
-    <div class="hero-stat">
-      <span class="num" data-count="74">0</span>
-      <span class="label">% 정책자금 미신청 법인 비율</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="num" data-count="68">0</span>
-      <span class="label">% 가지급금·잉여금 미정리율</span>
-    </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stat">
-      <span class="num" data-count="81">0</span>
-      <span class="label">% 증여·상속 대책 부재율</span>
-    </div>
+  <div class="hero-lead fade-in">
+    <span class="hero-lead-tag">매출 3억 ~ 50억 중소법인 대표님께</span>
+    <h2 class="hero-lead-title">문제는 사업이 아니라, 3가지의 부재에 있습니다.</h2>
+    <p class="hero-lead-desc">
+      매출이 늘어도 대표님 손에 남는 것이 없다면, 원인은 제품도 시장도 아닙니다.
+      <strong>재무 전략 · 실행력 · 개인 자산화</strong> — 이 세 가지가 채워지는 순간,
+      같은 매출에서도 대표님이 가져가는 결과가 달라집니다.
+    </p>
   </div>
 
   <div class="hero-cta">
