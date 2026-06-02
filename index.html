@@ -976,6 +976,127 @@
     font-size: 15px;
     cursor: pointer;
   }
+
+  /* ════════════════════════════════════════════════════════════════════
+     LIGHT THEME OVERRIDE (gongtalclass.oopy.io 참고)
+     ════════════════════════════════════════════════════════════════════ */
+  :root {
+    --navy: #ffffff;
+    --navy-mid: #f7f8fb;
+    --navy-dark: #eef1f6;
+    --gold: #1d4ed8;
+    --gold-pale: #0a1530;
+    --gold-soft: rgba(29,78,216,0.12);
+    --gray-100: #1f2937;
+    --gray-300: #374151;
+    --gray-500: #6b7280;
+    --green-accent: #dc2626;
+  }
+  body { background: #ffffff; color: #1f2937; }
+
+  .hero { background: linear-gradient(180deg, #ffffff 0%, #f7f8fb 100%); }
+  .hero-grid-bg {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    opacity: 1;
+  }
+  .hero-badge { background: rgba(29,78,216,0.08); border: 1px solid rgba(29,78,216,0.25); color: #1d4ed8; }
+  .hero h1 { color: #0a0a0a; }
+  .hero h1 em { color: #1d4ed8; }
+  .hero h1 em::after { background: rgba(29,78,216,0.18); }
+  .hero-sub { color: #4b5563; }
+  .hero-stat .num { color: #1d4ed8; }
+  .hero-stat .label { color: #6b7280; }
+  .hero-divider { background: rgba(0,0,0,0.1); }
+  .hero-video { box-shadow: 0 18px 50px rgba(15,23,42,0.18); border: 1px solid rgba(0,0,0,0.08); }
+  .btn-primary { background: #1d4ed8; color: #fff; }
+  .btn-primary:hover { background: #1739a8; }
+  .btn-secondary { background: transparent; color: #1d4ed8; border: 1px solid #1d4ed8; }
+  .btn-secondary:hover { background: rgba(29,78,216,0.06); }
+
+  .float-bar { background: #0a1530; color: #ffffff; border-top: 1px solid rgba(0,0,0,0.08); }
+  .float-bar a { background: #dc2626; color: #fff; }
+  .float-bar a:hover { background: #b91c1c; }
+
+  .section-label { color: #1d4ed8; }
+  .section-title { color: #0a0a0a; }
+  .section-title em { color: #1d4ed8; }
+  .section-desc { color: #4b5563; }
+
+  .sec-fear { background: #ffffff; }
+  .fear-headline { color: #0a0a0a; }
+  .fear-highlight { color: #dc2626; }
+  .fear-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .fear-card:hover { border-color: rgba(29,78,216,0.3); box-shadow: 0 12px 32px rgba(15,23,42,0.10); }
+  .fear-card h3 { color: #0a0a0a; }
+  .fear-card p { color: #374151; }
+  .fear-card p strong { color: #1d4ed8 !important; }
+
+  .sec-facts { background: #f7f8fb; }
+  .chart-wrap { background: #ffffff; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 4px 18px rgba(15,23,42,0.04); }
+  .chart-row + .chart-row { border-top: 1px solid rgba(0,0,0,0.06); }
+  .chart-label { color: #374151; }
+  .chart-bar { background: #eef1f6; }
+  .chart-fill { background: linear-gradient(90deg, #1d4ed8 0%, #2563eb 100%); }
+  .chart-fill span { color: #fff; }
+  .chart-source { color: #9ca3af; }
+  .fact-card { background: #ffffff; border: 1px solid rgba(29,78,216,0.18); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .fact-num { color: #1d4ed8; }
+  .fact-text { color: #374151; }
+
+  .sec-solution { background: #ffffff; }
+  .solution-item { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .solution-item:hover { border-color: rgba(29,78,216,0.3); box-shadow: 0 14px 36px rgba(15,23,42,0.10); }
+  .solution-num { color: #1d4ed8; }
+  .solution-body h3 { color: #0a0a0a; }
+  .solution-body p { color: #374151; }
+  .solution-body p strong { color: #1d4ed8 !important; }
+  .solution-tags span { background: rgba(29,78,216,0.08); border: 1px solid rgba(29,78,216,0.2); color: #1d4ed8; }
+
+  .sec-proof { background: #f7f8fb; }
+  .reason-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .reason-card:hover { border-color: rgba(29,78,216,0.3); box-shadow: 0 12px 32px rgba(15,23,42,0.10); }
+  .reason-num { color: #1d4ed8; }
+  .reason-card h4 { color: #0a0a0a; }
+  .reason-card p { color: #374151; }
+  .proof-subtitle { color: #0a0a0a; }
+  .proof-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .proof-card:hover { border-color: rgba(29,78,216,0.3); box-shadow: 0 14px 36px rgba(15,23,42,0.10); }
+  .proof-amount { color: #1d4ed8; }
+  .proof-card .proof-tag { background: rgba(29,78,216,0.08); color: #1d4ed8; border: 1px solid rgba(29,78,216,0.2); }
+  .proof-card p { color: #374151; }
+  .proof-card .who { color: #9ca3af; border-top: 1px dashed rgba(0,0,0,0.1); }
+
+  .sec-who { background: #ffffff; }
+  .who-intro { color: #374151; }
+  .who-intro strong { color: #1d4ed8; }
+  .who-card { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 4px 18px rgba(15,23,42,0.05); }
+  .who-card:hover { border-color: rgba(29,78,216,0.3); }
+  .who-card p { color: #1f2937; }
+  .who-card .tick { background: #1d4ed8; color: #fff; }
+
+  .sec-cta { background: #f7f8fb; }
+  .cta-box { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); box-shadow: 0 14px 50px rgba(15,23,42,0.08); }
+  .why-now { background: linear-gradient(135deg, rgba(220,38,38,0.05) 0%, rgba(29,78,216,0.04) 100%); border: 1px solid rgba(220,38,38,0.2); }
+  .why-now h3 { color: #dc2626; }
+  .why-now .why-lead { font-size: 16px; color: #0a0a0a; font-weight: 700; margin: 8px 0 22px; line-height: 1.6; }
+  .why-now .why-block { padding: 16px 0; border-top: 1px solid rgba(0,0,0,0.08); }
+  .why-now .why-block:first-of-type { border-top: 0; padding-top: 4px; }
+  .why-now .why-block h4 { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: 16px; color: #1d4ed8; margin-bottom: 10px; line-height: 1.6; }
+  .why-now .why-block p { font-size: 14.5px; color: #374151; line-height: 1.85; margin-bottom: 4px; }
+  .why-now .why-block p strong { color: #dc2626; }
+  .why-now li { color: #1f2937; }
+  .why-now li::before { color: #1d4ed8; }
+  .why-now li strong { color: #0a0a0a; }
+  .why-now .slot-text { color: #dc2626; }
+  .submit-btn { background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 100%); color: #fff; box-shadow: 0 8px 24px rgba(29,78,216,0.3); }
+  .submit-btn:hover { box-shadow: 0 14px 36px rgba(29,78,216,0.4); }
+  .form-notice { color: #6b7280; }
+
+  footer { background: #0a1530; color: #cbd5e1; }
+  footer p { color: #94a3b8; }
+  footer a { color: #cbd5e1; }
 </style>
 </head>
 <body>
@@ -1308,18 +1429,30 @@
       </div>
 
       <div class="why-now fade-in">
-        <h3>⏰ 왜 지금 신청해야 하는가</h3>
-        <ul>
-          <li><strong>결산 시점이 다가옵니다.</strong> 절세·배당 설계는 결산 전 3개월이 골든타임입니다.</li>
-          <li><strong>정책자금은 분기별로 마감됩니다.</strong> 서류 준비와 면담에만 4~6주가 소요됩니다.</li>
-          <li><strong>증여는 시점이 곧 비용입니다.</strong> 주식가치가 더 오르기 전이 가장 유리합니다.</li>
-          <li><strong>밀착 컨설팅의 질을 위해</strong> 월 신규 5개사로 제한합니다. <span class="slot-text">현재 잔여 2자리</span></li>
-        </ul>
+        <h3>왜 지금 신청해야 하는가?</h3>
+        <p class="why-lead">재무 관리는 맑은 날 미리 지붕을 고치는 일입니다.</p>
+
+        <div class="why-block">
+          <h4>재무제표와 사업 시스템은 하루아침에 안 바뀝니다.</h4>
+          <p>금융기관 대출, 기업인증 심사는 최소 6~12개월 전 재무지표를 봅니다.</p>
+          <p>필요할 때 시작하면 이미 늦습니다. 지금 시작해야 1년 후가 달라집니다.</p>
+        </div>
+
+        <div class="why-block">
+          <h4>지금 이 순간에도 대표님의 돈은 나가고 있습니다.</h4>
+          <p>절세의 기본기는 세금 종류와 과세 대상을 나누고 기간은 길게 하는 것.</p>
+          <p><strong>시간이 돈입니다.</strong></p>
+        </div>
+
+        <div class="why-block">
+          <h4>지금 받을 수 있는 정부 지원금, 놓치면 비용입니다.</h4>
+          <p>지급 조건과 기간이 한정되어 있는 지원금, 확인 후 바로 신청하세요.</p>
+        </div>
       </div>
 
       <div class="form-wrap fade-in" style="text-align:center;">
         <a href="https://walla.my/survey/8NLQYy5CJkpNQfopvHrD" target="_blank" rel="noopener" class="submit-btn" style="display:inline-block;text-decoration:none;max-width:520px;width:100%;">
-          무료 종합진단 신청하기 →
+          현재 진행가능 인원 : 2명
         </a>
         <p class="form-notice" style="margin-top:20px;">
           진단 신청서 작성에 약 5분이 소요됩니다.<br>
